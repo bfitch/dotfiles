@@ -18,6 +18,11 @@ They're good enough®
 ```
 *Note*: ln -s [original_file] [link]
 
-#### Vundle
+#### Install Bash Completion
+```
+  brew install bash-completion
+```
+
+#### Setup Vundle
 - If not already installed: `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 - Launch vim and run `:PluginInstall`
