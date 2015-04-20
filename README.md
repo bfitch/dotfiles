@@ -1,8 +1,6 @@
 # dotfiles
 They're good enough®
 
---------------------------
-
 #### Setup symlinks
 
 - Clone repo into home directory
