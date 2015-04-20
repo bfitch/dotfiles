@@ -32,6 +32,11 @@ alias unhitch='`which hitch` -u;echo "export GIT_AUTHOR_NAME=\"Brian Fitch\" GIT
 
 ############# SOURCE ##############
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
 
 PROMPT_COMMAND='__git_ps1 "\[\033[1;36m\]\w" "\[\033[00m\] $ "'
@@ -47,11 +52,6 @@ GIT_PS1_SHOWUPSTREAM="auto git"
 eval `boot2docker shellinit 2>/dev/null`
 
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-
 export BUNDLER_EDITOR=mvim
-export PGPASSWORD_STAGING=ScigEkJeTrTW
 
 PATH=$PATH:/usr/local/sbin:~/src/toolchest/bin:~/bin:opt/boxen/homebrew/opt/go/libexec/bin:~/Library/Haskell/bin
