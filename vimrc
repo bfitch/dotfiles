@@ -29,7 +29,6 @@ Plugin 'rking/ag.vim'
 Plugin 'pthrasher/conqueterm-vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'syntastic'
 
 " All of your Plugins must be added before the following line
  call vundle#end()            " required
