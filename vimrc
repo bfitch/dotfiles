@@ -132,7 +132,8 @@ nmap tt <C-W>
 if &t_Co > 2 || has("gui_running") " &t_Co > 2 => we have colors
   syntax on
   " set guifont=Monaco:h12
-  set guifont=Meslo\ LG\ S\ for\ Powerline:h13 " Installed from: https://github.com/powerline/fonts
+  " set guifont=Meslo\ LG\ S\ for\ Powerline:h13 " Installed from: https://github.com/powerline/fonts
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h13 " Installed from: https://github.com/powerline/fonts
   let g:airline_powerline_fonts = 1
 endif
 
