@@ -54,5 +54,7 @@ eval `boot2docker shellinit 2>/dev/null`
 
 
 export BUNDLER_EDITOR=mvim
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 PATH=$PATH:/usr/local/sbin:~/src/toolchest/bin:~/bin:opt/boxen/homebrew/opt/go/libexec/bin:~/Library/Haskell/bin
