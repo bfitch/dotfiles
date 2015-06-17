@@ -81,8 +81,10 @@ set smartcase      " ignore case if search pattern is all lowercase, case-sensit
 set smarttab       " insert tabs on the start of a line according to shiftwidth, not tabstop
 set incsearch      " show search matches as you type
 set hlsearch       " highlight matches
+set laststatus=2   " always show statusline
 
-match ErrorMsg '\s\+$' " highlight trailing whitespace
+match ErrorMsg '\s\+$'       " highlight trailing whitespace
+let g:indentLine_enabled = 0 " toggle off indent guides by default
 
 "-----------------CTRL-P------------------------
 let g:ctrlp_map = '<c-p>'
@@ -143,6 +145,7 @@ set pastetoggle=<F2>   " Hit <F2> to disable/enable autoindention for paste
 :nnoremap <C-T> :!ctags -R --exclude=.git --exclude=log --exclude=public --exclude=vendor --exclude=node_modules --exclude=bower_components<CR> " Generate CTags file
 :nnoremap <Leader>r :call RunCFile() <CR>
 
+"----------------COMMANDS-----------------------
 function! RunCFile()
   let file = expand("%:t:r")
   execute ":make clean && make && ./".file
