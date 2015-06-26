@@ -12,6 +12,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Railscasts-Theme-GUIand256color'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'jordwalke/flatlandia'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
@@ -19,7 +21,6 @@ Plugin 'godlygeek/tabular'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-cucumber'
 Plugin 'kien/ctrlp.vim'
-" Plugin 'SuperTab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'briancollins/vim-jst'
@@ -52,6 +53,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_json_checkers = ['jsonlint']
+" let g:syntastic_ruby_checkers = ['rubocop'] " ['mri']
+let g:syntastic_mode_map = { 'passive_filetypes': ['cucumber, ruby'] }
+let g:syntastic_error_symbol = '>'
+let g:syntastic_warning_symbol = '!'
 
 "-----------------CONFIG -----------------------
 set number
@@ -81,9 +87,11 @@ set smartcase      " ignore case if search pattern is all lowercase, case-sensit
 set smarttab       " insert tabs on the start of a line according to shiftwidth, not tabstop
 set incsearch      " show search matches as you type
 set hlsearch       " highlight matches
+command! ClearSearch let @/="" " clear highlight after search
+map <C-\> :ClearSearch<CR>
 set laststatus=2   " always show statusline
 
-match ErrorMsg '\s\+$'       " highlight trailing whitespace
+"match ErrorMsg '\s\+$'       " highlight trailing whitespace
 let g:indentLine_enabled = 0 " toggle off indent guides by default
 
 "-----------------CTRL-P------------------------
@@ -152,7 +160,8 @@ function! RunCFile()
   execute ":make clean && make && ./".file
 endfunction
 
-colorscheme railscasts
+" colorscheme railscasts
+colorscheme flatlandia
 
 map <Leader>ss :call OpenSpecFile() <CR>
 map <Leader>rs :call RunSpecExample() <CR>
