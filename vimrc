@@ -25,7 +25,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'briancollins/vim-jst'
 Plugin 'leshill/vim-json'
-Plugin 'pangloss/vim-javascript'
+" Plugin 'pangloss/vim-javascript'
 Plugin 'tComment'
 Plugin 'ack.vim'
 Plugin 'rking/ag.vim'
@@ -36,7 +36,10 @@ Plugin 'Bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'Yggdroot/indentLine'
-Plugin 'mxw/vim-jsx'
+" Plugin 'mxw/vim-jsx'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'keith/rspec.vim'
 
 " All of your Plugins must be added before the following line
  call vundle#end()            " required
@@ -55,7 +58,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_json_checkers = ['jsonlint']
 " let g:syntastic_ruby_checkers = ['rubocop'] " ['mri']
-let g:syntastic_mode_map = { 'passive_filetypes': ['cucumber, ruby'] }
+let syntastic_mode_map = { 'passive_filetypes': ['cucumber', 'ruby', 'html'] }
 let g:syntastic_error_symbol = '>'
 let g:syntastic_warning_symbol = '!'
 
@@ -145,13 +148,15 @@ if &t_Co > 2 || has("gui_running") " &t_Co > 2 => we have colors
   let g:airline_powerline_fonts = 1
 endif
 
-let g:jsx_ext_required = 0 "highlight jsx in .js files
+" let g:jsx_ext_required = 0 "highlight jsx in .js files
+let g:used_javascript_libs = 'underscore, backbone, jquery, react, flux, jasmine, chai, handlebars'
 
 set pastetoggle=<F2>   " Hit <F2> to disable/enable autoindention for paste
 
 :noremap <Leader> :NERDTreeToggle<CR>
 
-:nnoremap <C-T> :!ctags -R --exclude=.git --exclude=log --exclude=public --exclude=vendor --exclude=node_modules --exclude=bower_components<CR> " Generate CTags file
+ " Generate CTags file
+:nnoremap <C-T> :!ctags -R --exclude=.git --exclude=tmp --exclude=log --exclude=public --exclude=vendor --exclude=node_modules --exclude=bower_components<CR>
 :nnoremap <Leader>r :call RunCFile() <CR>
 
 "----------------COMMANDS-----------------------

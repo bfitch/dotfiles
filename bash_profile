@@ -63,4 +63,7 @@ export BUNDLER_EDITOR=mvim
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+export OAUTHD_KEY=K-R83mS9ILV5IrYAC2A8scTaw1Q
+export SNOWFLAKE_URI=http://snowflake.dev
+
 PATH=$PATH:/usr/local/sbin:~/src/toolchest/bin:~/bin:opt/boxen/homebrew/opt/go/libexec/bin:~/Library/Haskell/bin
