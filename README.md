@@ -4,17 +4,17 @@ They're good enough®
 #### Setup symlinks
 
 - Clone repo into home directory
-- Link home dir `~/.vimrc` to the repo's `.vimrc`:
+- Link home dir `~/.vimrc` to the repo's `vimrc`:
 ```
-  ln -s ~/dotfiles/.vimrc ~/.vimrc
+  ln -s ~/dotfiles/vimrc ~/.vimrc
 ```
-- Link home dir `~/.bash_profile` to the repo's `.bash_profile`:
+- Link home dir `~/.bash_profile` to the repo's `bash_profile`:
 ```
-  ln -s ~/dotfiles/.bash_profile ~/.bash_profile`
+  ln -s ~/dotfiles/bash_profile ~/.bash_profile`
 ```
 - Link vimscripts:
 ```
-  ln -s ~/dotfiles/.vim/bundle/* ~/.vim/bundle/*
+  ln -s ~/dotfiles/.vim/plugin/* ~/.vim/plugin/*
 ```
 *Note*: ln -s [original_file] [link]
 
