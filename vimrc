@@ -21,7 +21,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-cucumber'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'briancollins/vim-jst'
 Plugin 'leshill/vim-json'
@@ -40,6 +40,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'keith/rspec.vim'
+Plugin 'elmcast/elm-vim'
 
 " All of your Plugins must be added before the following line
  call vundle#end()            " required
@@ -203,3 +204,10 @@ endfunction
 let g:ConqueTerm_Color = 0
 let g:ConqueTerm_TERM = 'xterm-256color'
 nmap <silent> <Leader>c :execute 'ConqueTermSplit bash --login'<CR>
+
+
+"--------------------JSON SCHEMA------------------------
+au FileType json nmap <Leader>b :!bundle exec prmd combine --meta meta.json schemata/ > schema.json && bundle exec prmd verify schema.json && bundle exec prmd doc -p overview.md schema.json > README.md<cr>
+
+" Requires `npm install -g json`
+au FileType json nmap <Leader>t :!cat % \| json 2>&1 \| less -R<cr>

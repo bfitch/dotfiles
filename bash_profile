@@ -55,10 +55,12 @@ function _update_ps1() {
 
 export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 
+ulimit -n 2560
+
 ############ DOCKER ##############
 eval `boot2docker shellinit 2>/dev/null`
 
-
+export EDITOR=mvim
 export BUNDLER_EDITOR=mvim
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
