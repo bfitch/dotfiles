@@ -18,6 +18,8 @@ alias devlog="tail -n 2000 -f ./log/development.log"
 alias testlog="tail -n 2000 -f ./log/test.log"
 alias psr="ps aux | grep ruby"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias pat="cd /Users/brian/src/icispatients"
+alias hack="cd /Users/brian/projects"
 
 ############ Git ##################
 alias g=git
@@ -67,5 +69,7 @@ export LANG=en_US.UTF-8
 
 export OAUTHD_KEY=K-R83mS9ILV5IrYAC2A8scTaw1Q
 export SNOWFLAKE_URI=http://snowflake.dev
+
+function code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args "$@"; }
 
 PATH=$PATH:/usr/local/sbin:~/src/toolchest/bin:~/bin:opt/boxen/homebrew/opt/go/libexec/bin:~/Library/Haskell/bin
