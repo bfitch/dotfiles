@@ -95,7 +95,7 @@ command! ClearSearch let @/="" " clear highlight after search
 map <C-\> :ClearSearch<CR>
 set laststatus=2   " always show statusline
 
-"match ErrorMsg '\s\+$'       " highlight trailing whitespace
+match ErrorMsg '\s\+$'       " highlight trailing whitespace
 let g:indentLine_enabled = 0 " toggle off indent guides by default
 
 "-----------------CTRL-P------------------------
@@ -143,8 +143,6 @@ nmap tt <C-W>
 " Turn on syntax highlighting when we have colors or gui is running
 if &t_Co > 2 || has("gui_running") " &t_Co > 2 => we have colors
   syntax on
-  " set guifont=Monaco:h12
-  " set guifont=Meslo\ LG\ S\ for\ Powerline:h13 " Installed from: https://github.com/powerline/fonts
   set guifont=Source\ Code\ Pro\ for\ Powerline:h13 " Installed from: https://github.com/powerline/fonts
   let g:airline_powerline_fonts = 1
 endif
@@ -154,21 +152,16 @@ let g:used_javascript_libs = 'underscore, backbone, jquery, react, flux, jasmine
 
 set pastetoggle=<F2>   " Hit <F2> to disable/enable autoindention for paste
 
-:noremap <Leader> :NERDTreeToggle<CR>
+:noremap <Leader>n :NERDTreeToggle<CR>
+:noremap <C-B> :CtrlPBuffer<CR>
 
  " Generate CTags file
 :nnoremap <C-T> :!ctags -R --exclude=.git --exclude=tmp --exclude=log --exclude=public --exclude=vendor --exclude=node_modules --exclude=bower_components<CR>
-:nnoremap <Leader>r :call RunCFile() <CR>
-
-"----------------COMMANDS-----------------------
-function! RunCFile()
-  let file = expand("%:t:r")
-  execute ":make clean && make && ./".file
-endfunction
 
 " colorscheme railscasts
 colorscheme flatlandia
 
+"----------------COMMANDS-----------------------
 map <Leader>ss :call OpenSpecFile() <CR>
 map <Leader>rs :call RunSpecExample() <CR>
 map <Leader>rr :call RunSpecFile() <CR>

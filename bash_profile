@@ -62,13 +62,16 @@ ulimit -n 2560
 ############ DOCKER ##############
 eval `boot2docker shellinit 2>/dev/null`
 
-export EDITOR=mvim
-export BUNDLER_EDITOR=mvim
+export EDITOR=vim
+export BUNDLER_EDITOR=atom
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export OAUTHD_KEY=K-R83mS9ILV5IrYAC2A8scTaw1Q
 export SNOWFLAKE_URI=http://snowflake.dev
+
+export ICISSTAFF_DEVELOPMENT_SNOWFLAKE_KEY=38d039fa3e12ff7e788809b4221045043b3ba83f265abfb9352a4e6e5676e39d
+export ICISSTAFF_DEVELOPMENT_SNOWFLAKE_SECRET=88c597a980027189981161b91848e88db3bd7e5823e54ac4ac3e215a933f97c9
 
 function code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args "$@"; }
 
