@@ -63,6 +63,8 @@ export LANG=en_US.UTF-8
 
 source ~/.super_secret
 
+export SNOWFLAKE_URI='http://snowflake.localhost'
+
 PATH=$PATH:$HOME/.local/bin:/usr/local/sbin:~/src/toolchest/bin:~/bin:$HOME/.yarn/bin
 export PATH="$PATH:`yarn global bin`"
 [ -f $HOME/.chirpstrap/env.sh ] && source $HOME/.chirpstrap/env.sh
